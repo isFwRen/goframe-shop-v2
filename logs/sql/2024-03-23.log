@@ -1,0 +1,39 @@
+2024-03-23 16:12:44.869 [DEBU] {dc9296279156bf1717d3df0b4be2ac70} [  4 ms] [default] [shop] [rows:4  ] SHOW FULL COLUMNS FROM `rotation_info`
+2024-03-23 16:12:44.880 [ERRO] {dc9296279156bf1717d3df0b4be2ac70} [ 10 ms] [default] [shop] [rows:0  ] INSERT INTO `rotation_info`(`pic_url`,`link`,`sort`) VALUES('https://www.baidu.com','https://www.baidu.com',1) 
+Error: Error 1364 (HY000): Field 'id' doesn't have a default value 
+Stack:
+1.  goframe-shop-v2/internal/logic/rortation.(*sRotation).Create
+    C:/Users/26294/Desktop/project/goframe-shop-v2/internal/logic/rortation/rotation.go:26
+2.  goframe-shop-v2/internal/controller.(*cRotation).Create
+    C:/Users/26294/Desktop/project/goframe-shop-v2/internal/controller/rotation.go:18
+
+2024-03-23 16:13:33.653 [DEBU] {f01070839c56bf1718d3df0b6e2b0a68} [  8 ms] [default] [shop] [rows:1  ] INSERT INTO `rotation_info`(`pic_url`,`link`,`sort`) VALUES('https://www.baidu.com','https://www.baidu.com',1) 
+2024-03-23 16:17:06.487 [DEBU] {8c117d11ce56bf17e2ca7508df80e711} [  4 ms] [default] [shop] [rows:4  ] SHOW FULL COLUMNS FROM `rotation_info`
+2024-03-23 16:17:06.495 [DEBU] {8c117d11ce56bf17e2ca7508df80e711} [  5 ms] [default] [shop] [rows:1  ] INSERT INTO `rotation_info`(`pic_url`,`link`,`sort`) VALUES('https://www.baidu.com','https://www.baidu.com',1) 
+2024-03-23 16:17:09.698 [DEBU] {9cddd6d0ce56bf17e3ca7508d8ada6c4} [  7 ms] [default] [shop] [rows:1  ] INSERT INTO `rotation_info`(`pic_url`,`link`,`sort`) VALUES('https://www.baidu.com','https://www.baidu.com',1) 
+2024-03-23 17:08:22.751 [DEBU] {c4e7e7509a59bf17c46cd26de1671fef} [  8 ms] [default] [shop] [rows:4  ] SHOW FULL COLUMNS FROM `rotation_info`
+2024-03-23 17:08:22.758 [DEBU] {c4e7e7509a59bf17c46cd26de1671fef} [  6 ms] [default] [shop] [rows:1  ] INSERT INTO `rotation_info`(`pic_url`,`link`,`sort`) VALUES('https://www.baidu.com','https://www.baidu.com',1) 
+2024-03-23 17:12:24.709 [DEBU] {4c2a39a7d259bf17c56cd26d73a79b65} [  1 ms] [default] [shop] [rows:0  ] [txid:1] BEGIN
+2024-03-23 17:12:24.721 [DEBU] {4c2a39a7d259bf17c56cd26d73a79b65} [ 11 ms] [default] [shop] [rows:1  ] [txid:1] DELETE FROM `rotation_info` WHERE `id`=1
+2024-03-23 17:12:24.722 [DEBU] {4c2a39a7d259bf17c56cd26d73a79b65} [  0 ms] [default] [shop] [rows:0  ] [txid:1] COMMIT
+2024-03-23 17:17:33.596 [DEBU] {40fd02921a5abf17c66cd26d442c83d3} [  2 ms] [default] [shop] [rows:0  ] [txid:2] BEGIN
+2024-03-23 17:17:33.602 [DEBU] {40fd02921a5abf17c66cd26d442c83d3} [  3 ms] [default] [shop] [rows:0  ] [txid:2] DELETE FROM `rotation_info` WHERE `id`=1
+2024-03-23 17:17:33.604 [DEBU] {40fd02921a5abf17c66cd26d442c83d3} [  1 ms] [default] [shop] [rows:0  ] [txid:2] COMMIT
+2024-03-23 17:17:37.762 [DEBU] {70cfbb8a1b5abf17c76cd26db508c79a} [  0 ms] [default] [shop] [rows:0  ] [txid:3] BEGIN
+2024-03-23 17:17:37.766 [DEBU] {70cfbb8a1b5abf17c76cd26db508c79a} [  3 ms] [default] [shop] [rows:0  ] [txid:3] DELETE FROM `rotation_info` WHERE `id`=1
+2024-03-23 17:17:37.768 [DEBU] {70cfbb8a1b5abf17c76cd26db508c79a} [  1 ms] [default] [shop] [rows:0  ] [txid:3] COMMIT
+2024-03-23 23:38:45.979 [DEBU] {f0a964f6e76ebf17f74a267099ad3569} [  2 ms] [default] [shop] [rows:0  ] [txid:1] BEGIN
+2024-03-23 23:38:45.987 [DEBU] {f0a964f6e76ebf17f74a267099ad3569} [  2 ms] [default] [shop] [rows:1  ] [txid:1] SHOW TABLES
+2024-03-23 23:38:45.992 [DEBU] {f0a964f6e76ebf17f74a267099ad3569} [  3 ms] [default] [shop] [rows:7  ] [txid:1] SHOW FULL COLUMNS FROM `rotation_info`
+2024-03-23 23:38:45.995 [DEBU] {f0a964f6e76ebf17f74a267099ad3569} [  2 ms] [default] [shop] [rows:1  ] [txid:1] UPDATE `rotation_info` SET `pic_url`='https://google.com',`link`='https://google.com',`sort`=2,`updated_at`='2024-03-23 23:38:45' WHERE (`id`=2) AND `deleted_at` IS NULL
+2024-03-23 23:38:45.998 [DEBU] {f0a964f6e76ebf17f74a267099ad3569} [  2 ms] [default] [shop] [rows:0  ] [txid:1] COMMIT
+2024-03-23 23:40:18.445 [DEBU] {d002e47dfd6ebf17bceac77ea60b0c93} [  1 ms] [default] [shop] [rows:0  ] [txid:1] BEGIN
+2024-03-23 23:40:18.448 [DEBU] {d002e47dfd6ebf17bceac77ea60b0c93} [  1 ms] [default] [shop] [rows:1  ] [txid:1] SHOW TABLES
+2024-03-23 23:40:18.452 [DEBU] {d002e47dfd6ebf17bceac77ea60b0c93} [  4 ms] [default] [shop] [rows:7  ] [txid:1] SHOW FULL COLUMNS FROM `rotation_info`
+2024-03-23 23:40:18.454 [DEBU] {d002e47dfd6ebf17bceac77ea60b0c93} [  1 ms] [default] [shop] [rows:1  ] [txid:1] UPDATE `rotation_info` SET `pic_url`='https://google.com',`link`='https://google.com',`sort`=2,`updated_at`='2024-03-23 23:40:18' WHERE (`id`=3) AND `deleted_at` IS NULL
+2024-03-23 23:40:18.457 [DEBU] {d002e47dfd6ebf17bceac77ea60b0c93} [  2 ms] [default] [shop] [rows:0  ] [txid:1] COMMIT
+2024-03-23 23:50:42.302 [DEBU] {308944be8e6fbf17537dae6a6494f47b} [  4 ms] [default] [shop] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
+2024-03-23 23:50:42.308 [DEBU] {308944be8e6fbf17537dae6a6494f47b} [  5 ms] [default] [shop] [rows:1  ] INSERT INTO `rotation_info`(`pic_url`,`link`,`sort`,`created_at`,`updated_at`) VALUES('https://www.baidu.com','https://www.baidu.com',1,'2024-03-23 23:50:42','2024-03-23 23:50:42') 
+2024-03-23 23:50:52.386 [DEBU] {24bded17916fbf17547dae6a31f9d7c9} [  0 ms] [default] [shop] [rows:0  ] [txid:1] BEGIN
+2024-03-23 23:50:52.387 [DEBU] {24bded17916fbf17547dae6a31f9d7c9} [  0 ms] [default] [shop] [rows:1  ] [txid:1] DELETE FROM `rotation_info` WHERE `id`=5
+2024-03-23 23:50:52.395 [DEBU] {24bded17916fbf17547dae6a31f9d7c9} [  7 ms] [default] [shop] [rows:0  ] [txid:1] COMMIT
