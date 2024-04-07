@@ -17,9 +17,11 @@ type cPosition struct{}
 func (a *cPosition) Create(ctx context.Context, req *backend.PositionReq) (res *backend.PositionRes, err error) {
 	out, err := service.Position().Create(ctx, model.PositionCreateInput{
 		PositionCreateUpdateBase: model.PositionCreateUpdateBase{
-			PicUrl: req.PicUrl,
-			Link:   req.Link,
-			Sort:   req.Sort,
+			PicUrl:    req.PicUrl,
+			Link:      req.Link,
+			GoodsName: req.GoodsName,
+			GoodsId:   req.GoodsId,
+			Sort:      req.Sort,
 		},
 	})
 	if err != nil {
@@ -37,9 +39,11 @@ func (a *cPosition) Update(ctx context.Context, req *backend.PositionUpdateReq) 
 	err = service.Position().Update(ctx, model.PositionUpdateInput{
 		Id: req.Id,
 		PositionCreateUpdateBase: model.PositionCreateUpdateBase{
-			PicUrl: req.PicUrl,
-			Link:   req.Link,
-			Sort:   req.Sort,
+			PicUrl:    req.PicUrl,
+			Link:      req.Link,
+			GoodsName: req.GoodsName,
+			GoodsId:   req.GoodsId,
+			Sort:      req.Sort,
 		},
 	})
 	return &backend.PositionUpdateRes{Id: req.Id}, nil

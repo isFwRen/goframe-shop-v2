@@ -24,6 +24,7 @@ var (
 					hello.NewV1(),
 					controller.Rotation, //轮播图
 					controller.Position, //手工位图
+					controller.Admin,    //手工位图
 				)
 			})
 			s.Run()
