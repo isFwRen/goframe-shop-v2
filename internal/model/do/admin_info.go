@@ -15,10 +15,10 @@ type AdminInfo struct {
 	Id        interface{} //
 	Name      interface{} // 用户名
 	Password  interface{} // 密码
-	RoleIds   interface{} //
+	RoleIds   interface{} // 角色ids
 	CreatedAt *gtime.Time //
 	UpdatedAt *gtime.Time //
 	DeleteAt  *gtime.Time //
-	UserSait  interface{} // 用户盐
+	UserSalt  interface{} // 用户盐
 	IsAdmin   interface{} // 是否超级管理员
 }
