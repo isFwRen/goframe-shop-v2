@@ -18,7 +18,6 @@ type AdminInfo struct {
 	RoleIds   interface{} // 角色ids
 	CreatedAt *gtime.Time //
 	UpdatedAt *gtime.Time //
-	DeleteAt  *gtime.Time //
-	UserSalt  interface{} // 用户盐
+	UserSalt  interface{} // 加密盐
 	IsAdmin   interface{} // 是否超级管理员
 }

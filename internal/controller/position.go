@@ -3,6 +3,7 @@ package controller
 import (
 	"context"
 	"goframe-shop-v2/api/backend"
+	"goframe-shop-v2/api/frontend"
 	"goframe-shop-v2/internal/model"
 	"goframe-shop-v2/internal/service"
 )
@@ -60,6 +61,22 @@ func (a *cPosition) List(ctx context.Context, req *backend.PositionGetListCommon
 	}
 
 	return &backend.PositionGetListCommonRes{List: getListRes.List,
+		Page:  getListRes.Page,
+		Size:  getListRes.Size,
+		Total: getListRes.Total}, nil
+}
+
+func (a *cPosition) ListFrontend(ctx context.Context, req *frontend.RotationGetListCommonReq) (res *frontend.RotationGetListCommonRes, err error) {
+	getListRes, err := service.Position().GetList(ctx, model.PositionGetListInput{
+		Page: req.Page,
+		Size: req.Size,
+		Sort: req.Sort,
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return &frontend.RotationGetListCommonRes{List: getListRes.List,
 		Page:  getListRes.Page,
 		Size:  getListRes.Size,
 		Total: getListRes.Total}, nil
