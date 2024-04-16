@@ -71,6 +71,8 @@ func (s *sPosition) GetList(ctx context.Context, in model.PositionGetListInput) 
 	}
 	//3. 分页查询
 	listModel := m.Page(in.Page, in.Size)
+	//排序方式
+	listModel = listModel.OrderDesc(dao.PositionInfo.Columns().Sort)
 	//4. 再查询count，判断有无数据
 	out.Total, err = m.Count()
 	if err != nil || out.Total == 0 {

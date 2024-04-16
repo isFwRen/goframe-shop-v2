@@ -19,7 +19,12 @@ var (
 		Brief: "start http server",
 		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
 			s := g.Server()
-			s.Group("/", func(group *ghttp.RouterGroup) {
+
+			gfAdminToken, err := StartBackendGToken()
+			if err != nil {
+				return err
+			}
+			s.Group("/backend", func(group *ghttp.RouterGroup) {
 				//group.Middleware(ghttp.MiddlewareHandlerResponse)
 				group.Middleware(
 					//service.Middleware().CORS,
@@ -27,12 +32,27 @@ var (
 					service.Middleware().ResponseHandler,
 				)
 				group.Bind(
-					hello.NewV1(),
-					controller.Rotation, //轮播图
-					controller.Position, //手工位图
-					controller.Admin,    //手工位图
-					controller.Login,    //登录
+					controller.Admin.Create, // 管理员
 				)
+				group.Group("/", func(group *ghttp.RouterGroup) {
+					err = gfAdminToken.Middleware(ctx, group)
+					if err != nil {
+						panic(err)
+					}
+					group.Bind(
+						hello.NewV1(),
+						controller.Rotation,     //轮播图
+						controller.Position,     //手工位图
+						controller.Admin.List,   // 管理员
+						controller.Admin.Update, // 管理员
+						controller.Admin.Delete, // 管理员
+						controller.Admin.Info,   // 管理员
+						controller.Data,         //数据大全
+						controller.Role,         //角色
+						controller.Permission,   //权限
+						//controller.Login,    //登录
+					)
+				})
 			})
 			s.Run()
 			return nil

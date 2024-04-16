@@ -20,10 +20,10 @@ type RotationInfoDao struct {
 
 // RotationInfoColumns defines and stores column names for table rotation_info.
 type RotationInfoColumns struct {
-	Id        string // 主键id
-	PicUrl    string //
-	Link      string //
-	Sort      string //
+	Id        string //
+	PicUrl    string // 轮播图片
+	Link      string // 跳转链接
+	Sort      string // 排序字段
 	CreatedAt string //
 	UpdatedAt string //
 	DeletedAt string //
