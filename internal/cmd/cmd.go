@@ -19,7 +19,6 @@ var (
 		Brief: "start http server",
 		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
 			s := g.Server()
-
 			gfAdminToken, err := StartBackendGToken()
 			if err != nil {
 				return err
@@ -55,6 +54,7 @@ var (
 					)
 				})
 			})
+			s.SetPort(8000)
 			s.Run()
 			return nil
 		},
