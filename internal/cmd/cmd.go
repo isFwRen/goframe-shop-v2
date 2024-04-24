@@ -50,6 +50,7 @@ var (
 						controller.Data,         //数据大全
 						controller.Role,         //角色
 						controller.Permission,   //权限
+						controller.Category,     //商品分类管理
 						//controller.Login,    //登录
 					)
 				})
