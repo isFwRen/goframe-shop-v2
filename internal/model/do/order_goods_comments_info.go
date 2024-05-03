@@ -1,0 +1,23 @@
+// =================================================================================
+// Code generated and maintained by GoFrame CLI tool. DO NOT EDIT.
+// =================================================================================
+
+package do
+
+import (
+	"github.com/gogf/gf/v2/frame/g"
+	"github.com/gogf/gf/v2/os/gtime"
+)
+
+// OrderGoodsCommentsInfo is the golang structure of table order_goods_comments_info for DAO operations like Where/Data.
+type OrderGoodsCommentsInfo struct {
+	g.Meta         `orm:"table:order_goods_comments_info, do:true"`
+	Id             interface{} //
+	CreatedAt      *gtime.Time //
+	UpdatedAt      *gtime.Time //
+	OrderId        interface{} // 订单id
+	GoodsId        interface{} // 商品id
+	GoodsOptionsId interface{} // 商品规格id
+	ParentId       interface{} // 父级评论id
+	Content        interface{} //
+}
